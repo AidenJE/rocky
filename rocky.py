@@ -13,7 +13,7 @@ TOKEN = os.environ.get('TOKEN')
 
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
-DB_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@db/{DB_USER}" 
+DB_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@localhost/{DB_USER}" 
 
 
 cogs = (
@@ -39,6 +39,7 @@ logger = logging.getLogger(__name__)
 
 
 class Rocky(commands.Bot):
+
     def __init__(self, engine):
         intents = discord.Intents(guilds=True, members=True, reactions=True, bans=True)
         mentions = discord.AllowedMentions(everyone=False, roles=False)

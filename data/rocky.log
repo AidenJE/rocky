@@ -1,0 +1,211 @@
+[ERROR] [2022-01-09 15:58:12,579] Failed to connect to postgreSQL server
+Traceback (most recent call last):
+  File "/home/lain/Documents/rocky/rocky.py", line 76, in startup
+    engine = await gino.create_engine(DB_URL)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/strategies.py", line 55, in create
+    pool = await dialect.init_pool(u, loop, pool_class=pool_class)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 465, in init_pool
+    return await pool_class(url, loop, init=self.on_connect(), **self._pool_kwargs)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 218, in _init
+    self._pool = await asyncpg.create_pool(**args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 413, in _async__init__
+    await self._initialize()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 441, in _initialize
+    await first_ch.connect()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 133, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 511, in _get_new_connection
+    con = await connection.connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connection.py", line 2085, in connect
+    return await connect_utils._connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 781, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/compat.py", line 66, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 691, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1016, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1395, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 855, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+[ERROR] [2022-01-09 16:00:54,733] Failed to connect to postgreSQL server
+Traceback (most recent call last):
+  File "/home/lain/Documents/rocky/rocky.py", line 76, in startup
+    engine = await gino.create_engine(DB_URL)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/strategies.py", line 55, in create
+    pool = await dialect.init_pool(u, loop, pool_class=pool_class)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 465, in init_pool
+    return await pool_class(url, loop, init=self.on_connect(), **self._pool_kwargs)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 218, in _init
+    self._pool = await asyncpg.create_pool(**args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 413, in _async__init__
+    await self._initialize()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 441, in _initialize
+    await first_ch.connect()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 133, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 511, in _get_new_connection
+    con = await connection.connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connection.py", line 2085, in connect
+    return await connect_utils._connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 781, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/compat.py", line 66, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 691, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1016, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1395, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 855, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+[ERROR] [2022-01-09 16:02:28,400] Failed to connect to postgreSQL server
+Traceback (most recent call last):
+  File "/home/lain/Documents/rocky/rocky.py", line 76, in startup
+    engine = await gino.create_engine(DB_URL)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/strategies.py", line 55, in create
+    pool = await dialect.init_pool(u, loop, pool_class=pool_class)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 465, in init_pool
+    return await pool_class(url, loop, init=self.on_connect(), **self._pool_kwargs)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 218, in _init
+    self._pool = await asyncpg.create_pool(**args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 413, in _async__init__
+    await self._initialize()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 441, in _initialize
+    await first_ch.connect()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 133, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 511, in _get_new_connection
+    con = await connection.connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connection.py", line 2085, in connect
+    return await connect_utils._connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 781, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/compat.py", line 66, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 691, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1016, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1395, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 855, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+[ERROR] [2022-01-09 16:03:03,516] Failed to connect to postgreSQL server
+Traceback (most recent call last):
+  File "/home/lain/Documents/rocky/rocky.py", line 76, in startup
+    engine = await gino.create_engine(DB_URL)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/strategies.py", line 55, in create
+    pool = await dialect.init_pool(u, loop, pool_class=pool_class)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 465, in init_pool
+    return await pool_class(url, loop, init=self.on_connect(), **self._pool_kwargs)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/gino/dialects/asyncpg.py", line 218, in _init
+    self._pool = await asyncpg.create_pool(**args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 413, in _async__init__
+    await self._initialize()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 441, in _initialize
+    await first_ch.connect()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 133, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/pool.py", line 511, in _get_new_connection
+    con = await connection.connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connection.py", line 2085, in connect
+    return await connect_utils._connect(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 781, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/compat.py", line 66, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/lain/Documents/rocky/.env/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 691, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1016, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1395, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 855, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+[INFO] [2022-01-09 16:04:56,107] Starting rocky
+[WARNING] [2022-01-09 16:04:56,117] PyNaCl is not installed, voice will NOT be supported
+[INFO] [2022-01-09 16:04:56,118] logging in using static token
+[DEBUG] [2022-01-09 16:04:56,641] GET https://discord.com/api/v7/users/@me with None has returned 200
+[DEBUG] [2022-01-09 16:04:56,642] GET https://discord.com/api/v7/users/@me has received {'id': '929108832829988904', 'username': 'Rocky', 'avatar': '8caf454faf10108218142598f6d33ac0', 'discriminator': '2282', 'public_flags': 0, 'flags': 0, 'bot': True, 'banner': None, 'banner_color': None, 'accent_color': None, 'bio': '', 'locale': 'en-US', 'mfa_enabled': True, 'email': None, 'verified': True}
+[DEBUG] [2022-01-09 16:04:56,667] GET https://discord.com/api/v7/gateway with None has returned 200
+[DEBUG] [2022-01-09 16:04:56,667] GET https://discord.com/api/v7/gateway has received {'url': 'wss://gateway.discord.gg'}
+[DEBUG] [2022-01-09 16:04:56,785] Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+[DEBUG] [2022-01-09 16:04:56,785] Dispatching event socket_raw_receive
+[DEBUG] [2022-01-09 16:04:56,786] For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 10, 'd': {'heartbeat_interval': 41250, '_trace': ['["gateway-prd-main-8hsl",{"micros":0.0}]']}}
+[DEBUG] [2022-01-09 16:04:56,786] Dispatching event socket_response
+[DEBUG] [2022-01-09 16:04:56,786] Dispatching event socket_raw_send
+[DEBUG] [2022-01-09 16:04:56,787] Dispatching event socket_raw_send
+[INFO] [2022-01-09 16:04:56,788] Shard ID None has sent the IDENTIFY payload.
+[DEBUG] [2022-01-09 16:04:56,822] Dispatching event socket_raw_receive
+[DEBUG] [2022-01-09 16:04:56,822] For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+[DEBUG] [2022-01-09 16:04:56,822] Dispatching event socket_response
+[DEBUG] [2022-01-09 16:04:56,899] Dispatching event socket_raw_receive
+[DEBUG] [2022-01-09 16:04:56,899] For Shard ID None: WebSocket Event: {'t': 'READY', 's': 1, 'op': 0, 'd': {'v': 6, 'user_settings': {}, 'user': {'verified': True, 'username': 'Rocky', 'mfa_enabled': True, 'id': '929108832829988904', 'flags': 0, 'email': None, 'discriminator': '2282', 'bot': True, 'avatar': '8caf454faf10108218142598f6d33ac0'}, 'session_id': 'c8a9d97cd832abf906c3d8a2c9a935b2', 'relationships': [], 'private_channels': [], 'presences': [], 'guilds': [], 'guild_join_requests': [], 'geo_ordered_rtc_regions': ['newark', 'us-east', 'us-central', 'atlanta', 'us-south'], 'application': {'id': '929108832829988904', 'flags': 827392}, '_trace': ['["gateway-prd-main-8hsl",{"micros":76095,"calls":["discord-sessions-blue-prd-2-127",{"micros":75199,"calls":["start_session",{"micros":70400,"calls":["api-prd-main-5730",{"micros":64948,"calls":["get_user",{"micros":4880},"add_authorized_ip",{"micros":4762},"get_guilds",{"micros":10211},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":29,"calls":[]},"presence_connect",{"micros":3071,"calls":[]}]}]}]']}}
+[DEBUG] [2022-01-09 16:04:56,899] Dispatching event socket_response
+[INFO] [2022-01-09 16:04:56,900] Shard ID None has connected to Gateway: ["gateway-prd-main-8hsl",{"micros":76095,"calls":["discord-sessions-blue-prd-2-127",{"micros":75199,"calls":["start_session",{"micros":70400,"calls":["api-prd-main-5730",{"micros":64948,"calls":["get_user",{"micros":4880},"add_authorized_ip",{"micros":4762},"get_guilds",{"micros":10211},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":29,"calls":[]},"presence_connect",{"micros":3071,"calls":[]}]}]}] (Session ID: c8a9d97cd832abf906c3d8a2c9a935b2).
+[DEBUG] [2022-01-09 16:04:56,928] Dispatching event connect
+[DEBUG] [2022-01-09 16:04:58,931] Dispatching event ready
+[DEBUG] [2022-01-09 16:05:38,037] Keeping shard ID None websocket alive with sequence 1.
+[DEBUG] [2022-01-09 16:05:38,078] Dispatching event socket_raw_receive
+[DEBUG] [2022-01-09 16:05:38,078] For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+[DEBUG] [2022-01-09 16:05:38,078] Dispatching event socket_response
+[DEBUG] [2022-01-09 16:06:19,289] Keeping shard ID None websocket alive with sequence 1.
+[DEBUG] [2022-01-09 16:06:19,323] Dispatching event socket_raw_receive
+[DEBUG] [2022-01-09 16:06:19,324] For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+[DEBUG] [2022-01-09 16:06:19,324] Dispatching event socket_response
