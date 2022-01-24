@@ -1,8 +1,10 @@
+from ast import AsyncFunctionDef
 import gino
 import disnake
 import logging
 import os
 import sys
+import asyncio
 
 from logging.handlers import TimedRotatingFileHandler
 from disnake.ext import commands
@@ -17,14 +19,14 @@ DB_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@localhost/{DB_USER}"
 
 
 cogs = (
-    "cogs.logs",
     "cogs.fun",
+    "cogs.maintenance",
 )
 
 
 def setup_logger():
     logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
     formatter = logging.Formatter('[%(levelname)s] [%(asctime)s] %(message)s')
 
     if not os.path.exists('data'):
@@ -41,40 +43,27 @@ logger = logging.getLogger(__name__)
 
 class Rocky(commands.Bot):
 
-    def __init__(self):
+    def __init__(self, command_prefix):
         intents = disnake.Intents(guilds=True, members=True, reactions=True, bans=True)
         mentions = disnake.AllowedMentions(everyone=False, roles=False)
         super().__init__(
-                command_prefix=commands.when_mentioned_or(*['.', '!']),
+                #command_prefix=commands.when_mentioned_or(*command_prefix),
+                command_prefix=command_prefix,
                 description="The coolest pigeon on the block.",
                 intents=intents,
                 allowed_mentions=mentions,
                 case_insensitive=True
         )
 
-        self.engine = None
         self.load_cogs()
 
-    async def connect_database(self):
-        if self.engine:
-            return
-
-        try:
-            engine = await gino.create_engine(DB_URL)
-            db.bind = engine
-            self.engine = engine
-            logger.info("Connected to PostgreSQL server")
-        except:
-            logger.exception("Failed to connect to postgreSQL server")
-            sys.exit(1)
-
     async def on_ready(self):
-        await self.connect_database()
-        logger.info("Rocky is now ready!")
+        logger.info("Rocky is now ready")
 
     async def close(self):
         await super().close()
         await db.pop_bind().close()
+        logger.info("Rocky was closed")
 
     def load_cogs(self):
         for extension in cogs:
@@ -88,10 +77,29 @@ class Rocky(commands.Bot):
         if isinstance(e, commands.CommandNotFound):
             return
 
-if __name__ == '__main__':
+
+async def main():
     setup_logger()
 
+    try:
+        engine = await gino.create_engine(DB_URL)
+        db.bind = engine
+    except:
+        logger.exception("Failed to connect to PostgreSQL server")
+        return
+
     logger.info("Starting rocky")
-    bot = Rocky() 
+    bot = Rocky(command_prefix='.')
     bot.help_command = commands.DefaultHelpCommand()
-    bot.run(TOKEN)
+    await bot.start(TOKEN)
+
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+
+    try:
+        loop.run_until_complete(main())
+    except KeyboardInterrupt:
+        pass
+    finally:
+        loop.close()
