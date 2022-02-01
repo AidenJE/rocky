@@ -1,62 +1,12 @@
-[INFO] [2022-01-24 14:35:15,972] Starting rocky
-[WARNING] [2022-01-24 14:35:15,972] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:35:15,974] cogs.fun loaded.
-[INFO] [2022-01-24 14:35:15,974] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:35:15,974] logging in using static token
-[INFO] [2022-01-24 14:35:16,430] Shard ID None has sent the IDENTIFY payload.
-[INFO] [2022-01-24 14:35:16,551] Shard ID None has connected to Gateway: ["gateway-prd-main-3skz",{"micros":64437,"calls":["discord-sessions-green-prd-2-13",{"micros":58508,"calls":["start_session",{"micros":41481,"calls":["discord-api-56cd49dd65-xg9cc",{"micros":34693,"calls":["get_user",{"micros":6350},"add_authorized_ip",{"micros":1600},"get_guilds",{"micros":7217},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":8422,"calls":[]}]}]}] (Session ID: dbcb52c89ca8a94ff94d19db7f5b0ae7).
-[INFO] [2022-01-24 14:35:18,557] Rocky is now ready
-[INFO] [2022-01-24 14:37:55,111] Starting rocky
-[WARNING] [2022-01-24 14:37:55,112] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:37:55,113] cogs.fun loaded.
-[INFO] [2022-01-24 14:37:55,113] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:37:55,113] logging in using static token
-[INFO] [2022-01-24 14:37:55,373] Shard ID None has sent the IDENTIFY payload.
-[INFO] [2022-01-24 14:37:55,458] Shard ID None has connected to Gateway: ["gateway-prd-main-jbps",{"micros":42400,"calls":["discord-sessions-green-prd-2-22",{"micros":40883,"calls":["start_session",{"micros":34454,"calls":["discord-api-56cd49dd65-wrxt7",{"micros":30278,"calls":["get_user",{"micros":4111},"add_authorized_ip",{"micros":2402},"get_guilds",{"micros":3817},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":2211,"calls":[]}]}]}] (Session ID: 51c546c7a6796fb75e4912bd51bf8775).
-[INFO] [2022-01-24 14:37:57,470] Rocky is now ready
-[INFO] [2022-01-24 14:39:59,197] Starting rocky
-[WARNING] [2022-01-24 14:39:59,198] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:39:59,198] cogs.fun loaded.
-[INFO] [2022-01-24 14:39:59,199] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:39:59,199] Cleaning up tasks.
-[INFO] [2022-01-24 14:39:59,199] Cleaning up after 6 tasks.
-[INFO] [2022-01-24 14:39:59,199] Closing the event loop.
-[INFO] [2022-01-24 14:44:14,345] Starting rocky
-[WARNING] [2022-01-24 14:44:14,346] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:44:14,347] cogs.fun loaded.
-[INFO] [2022-01-24 14:44:14,347] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:44:14,347] Cleaning up tasks.
-[INFO] [2022-01-24 14:44:14,348] Cleaning up after 6 tasks.
-[INFO] [2022-01-24 14:44:14,348] Closing the event loop.
-[INFO] [2022-01-24 14:44:25,550] Starting rocky
-[WARNING] [2022-01-24 14:44:25,550] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:44:25,551] cogs.fun loaded.
-[INFO] [2022-01-24 14:44:25,552] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:44:25,552] logging in using static token
-[INFO] [2022-01-24 14:44:25,884] Shard ID None has sent the IDENTIFY payload.
-[INFO] [2022-01-24 14:44:26,004] Shard ID None has connected to Gateway: ["gateway-prd-main-rfkq",{"micros":84616,"calls":["discord-sessions-green-prd-2-97",{"micros":81024,"calls":["start_session",{"micros":43857,"calls":["discord-api-56cd49dd65-25srf",{"micros":33361,"calls":["get_user",{"micros":6523},"add_authorized_ip",{"micros":1249},"get_guilds",{"micros":4865},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":12614,"calls":[]}]}]}] (Session ID: 0c6c4df521f3126aa7d000061670f0f6).
-[INFO] [2022-01-24 14:44:28,022] Rocky is now ready
-[INFO] [2022-01-24 14:45:07,572] Starting rocky
-[WARNING] [2022-01-24 14:45:07,572] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:45:07,573] cogs.fun loaded.
-[INFO] [2022-01-24 14:45:07,574] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:45:07,574] logging in using static token
-[INFO] [2022-01-24 14:45:07,798] Shard ID None has sent the IDENTIFY payload.
-[INFO] [2022-01-24 14:45:08,099] Shard ID None has connected to Gateway: ["gateway-prd-main-x3xr",{"micros":190647,"calls":["discord-sessions-green-prd-2-70",{"micros":189721,"calls":["start_session",{"micros":163046,"calls":["discord-api-56cd49dd65-7vzh4",{"micros":59945,"calls":["get_user",{"micros":7737},"add_authorized_ip",{"micros":3812},"get_guilds",{"micros":5813},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":9072,"calls":[]}]}]}] (Session ID: ce61e61e3915fd113fca1fde8e80fad2).
-[INFO] [2022-01-24 14:45:10,103] Rocky is now ready
-[INFO] [2022-01-24 14:46:54,374] Starting rocky
-[WARNING] [2022-01-24 14:46:54,375] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:46:54,376] cogs.fun loaded.
-[INFO] [2022-01-24 14:46:54,377] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:46:54,377] logging in using static token
-[INFO] [2022-01-24 14:46:54,631] Shard ID None has sent the IDENTIFY payload.
-[INFO] [2022-01-24 14:46:54,806] Shard ID None has connected to Gateway: ["gateway-prd-main-8vbh",{"micros":108428,"calls":["discord-sessions-green-prd-2-9",{"micros":107022,"calls":["start_session",{"micros":62234,"calls":["discord-api-56cd49dd65-vmlrj",{"micros":55283,"calls":["get_user",{"micros":5002},"add_authorized_ip",{"micros":7323},"get_guilds",{"micros":7401},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":37172,"calls":[]}]}]}] (Session ID: f7670ce43746b1863298bf25f44e22a7).
-[INFO] [2022-01-24 14:46:56,811] Rocky is now ready
-[INFO] [2022-01-24 14:48:44,786] Starting rocky
-[WARNING] [2022-01-24 14:48:44,786] PyNaCl is not installed, voice will NOT be supported
-[INFO] [2022-01-24 14:48:44,787] cogs.fun loaded.
-[INFO] [2022-01-24 14:48:44,787] cogs.maintenance loaded.
-[INFO] [2022-01-24 14:48:44,787] logging in using static token
-[INFO] [2022-01-24 14:48:45,840] Shard ID None has sent the IDENTIFY payload.
-[INFO] [2022-01-24 14:48:45,955] Shard ID None has connected to Gateway: ["gateway-prd-main-3v0w",{"micros":71782,"calls":["discord-sessions-green-prd-2-134",{"micros":68735,"calls":["start_session",{"micros":64553,"calls":["discord-api-56cd49dd65-q7m4p",{"micros":60379,"calls":["get_user",{"micros":8903},"add_authorized_ip",{"micros":1958},"get_guilds",{"micros":4613},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3664,"calls":[]}]}]}] (Session ID: c41c561206069f5dc37f84a64c359fd6).
-[INFO] [2022-01-24 14:48:47,967] Rocky is now ready
+[INFO] [2022-02-01 16:58:14,447] Starting rocky
+[WARNING] [2022-02-01 16:58:14,448] PyNaCl is not installed, voice will NOT be supported
+[INFO] [2022-02-01 16:58:14,480] cogs.minecraft loaded.
+[INFO] [2022-02-01 16:58:14,480] logging in using static token
+[INFO] [2022-02-01 16:58:14,781] Shard ID None has sent the IDENTIFY payload.
+[INFO] [2022-02-01 16:58:14,859] Shard ID None has connected to Gateway: ["gateway-prd-main-s7rp",{"micros":41534,"calls":["discord-sessions-green-prd-2-116",{"micros":40446,"calls":["start_session",{"micros":22467,"calls":["api-prd-main-fl9p",{"micros":19945,"calls":["get_user",{"micros":2283},"add_authorized_ip",{"micros":1051},"get_guilds",{"micros":2842},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":14640,"calls":[]}]}]}] (Session ID: 4ff96ef2e93170ed1b09bca25aa6d1c2).
+[INFO] [2022-02-01 17:00:06,336] Starting rocky
+[WARNING] [2022-02-01 17:00:06,337] PyNaCl is not installed, voice will NOT be supported
+[INFO] [2022-02-01 17:00:06,370] cogs.minecraft loaded.
+[INFO] [2022-02-01 17:00:06,370] logging in using static token
+[INFO] [2022-02-01 17:00:06,701] Shard ID None has sent the IDENTIFY payload.
+[INFO] [2022-02-01 17:00:06,837] Shard ID None has connected to Gateway: ["gateway-prd-main-58gq",{"micros":89572,"calls":["discord-sessions-green-prd-2-173",{"micros":86613,"calls":["start_session",{"micros":75303,"calls":["api-prd-main-nmjw",{"micros":70171,"calls":["get_user",{"micros":5151},"add_authorized_ip",{"micros":8809},"get_guilds",{"micros":13429},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":10549,"calls":[]}]}]}] (Session ID: f3177c0ec76824280066017f79354bf7).
