@@ -1,9 +1,9 @@
-import disnake
+import discord
 import logging
 import os
 
 from logging.handlers import TimedRotatingFileHandler
-from disnake.ext import commands
+from discord.ext import commands
 
 
 cogs = ("cogs.minecraft",)
@@ -13,11 +13,18 @@ def setup_logger():
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter('[%(levelname)s] [%(asctime)s] %(message)s')
+
     file_handler = TimedRotatingFileHandler(
-        filename='data/rocky.log', when='midnight', encoding='utf-8', backupCount=7)
+        filename='logs/rocky.log', when='midnight', encoding='utf-8', backupCount=7)
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
+
+    stdout_handler = logging.StreamHandler()
+    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.setFormatter(formatter)
+
     logger.addHandler(file_handler)
+    logger.addHandler(stdout_handler)
 
 
 logger = logging.getLogger(__name__)
@@ -42,7 +49,7 @@ class Rocky(commands.Bot):
                 logger.error(f'{extension} failed to load.')
                 logger.error(e)
 
-    async def on_command_error(self, ctx: commands.Context, e: disnake.DiscordException):
+    async def on_command_error(self, ctx: commands.Context, e: discord.DiscordException):
         if isinstance(e, commands.CommandNotFound):
             return
 

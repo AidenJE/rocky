@@ -1,14 +1,46 @@
-import disnake
+import discord
 import mariadb
+import os
 
-from disnake.ext import commands
-from utils import minecraft
+from discord.ext import commands
+
+
+class MinecraftManager:
+    def __init__(self):
+        USER = os.environ.get('MC_USER')
+        PASSWORD = os.environ.get('MC_PASSWORD')
+        HOST = os.environ.get('MC_HOST')
+        PORT = int(os.environ.get('MC_PORT'))
+        DATABASE = os.environ.get('MC_DATABASE')
+
+        self.conn = mariadb.connect(
+            user=USER,
+            password=PASSWORD,
+            host=HOST,
+            port=PORT,
+            database=DATABASE,
+        )
+
+        self.conn.auto_reconnect = True
+        self.cur = self.conn.cursor()
+
+    def is_code_valid(self, code):
+        self.cur.execute("SELECT COUNT(1) FROM code WHERE code = ?", (code, ))
+        return 1 in self.cur.fetchall()[0]
+
+    def is_player_whitelisted(self, code):
+        self.cur.execute("SELECT whitelisted FROM player WHERE uuid IN (SELECT player_uuid FROM code WHERE code = ?)", (code, ))
+        return 1 in self.cur.fetchall()[0]
+
+    def whitelist_player(self, code):
+        self.cur.execute("UPDATE player SET whitelisted = 1 WHERE uuid IN (SELECT player_uuid FROM code WHERE code = ?)", (code, ))
+        self.bot.conn.commit()
 
 
 class Minecraft(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.manager = minecraft.MinecraftManager()
+        self.manager = MinecraftManager()
 
     @commands.command(help="Register your lunchclub token here.")
     @commands.cooldown(2, 3.0, commands.BucketType.user)
@@ -24,7 +56,7 @@ class Minecraft(commands.Cog):
             await self.send_success_message(ctx)
 
     async def send_error_message(self, ctx):
-        embed = disnake.Embed(
+        embed = discord.Embed(
             title="Invalid token",
             description="The token you provided is invalid, please double check it.\n To register your token, type: `!register YOURTOKENHERE`",
             colour=0xFF0000)
@@ -36,7 +68,7 @@ class Minecraft(commands.Cog):
         await ctx.reply(embed=embed)
 
     async def send_reminder_message(self, ctx):
-        embed = disnake.Embed(title="Account already whitelisted",
+        embed = discord.Embed(title="Account already whitelisted",
                               description="Please double check that you can connect to the server.",
                               colour=0xFFAE00)
         embed.add_field(name="I still can't connect, what do I do?",
@@ -44,7 +76,7 @@ class Minecraft(commands.Cog):
         await ctx.reply(embed=embed)
 
     async def send_success_message(self, ctx):
-        embed = disnake.Embed(title="Account succesfully whitelisted",
+        embed = discord.Embed(title="Account succesfully whitelisted",
                               description="Your account has been whitelisted and you should now be able to join the Lunch Club SMP server!",
                               colour=0x00FF00)
         await ctx.reply(embed=embed)
