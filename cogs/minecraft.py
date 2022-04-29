@@ -19,22 +19,25 @@ class MinecraftManager:
             host=HOST,
             port=PORT,
             database=DATABASE,
+            autocommit = True
         )
 
         self.conn.auto_reconnect = True
         self.cur = self.conn.cursor()
 
     def is_code_valid(self, code):
+        self.conn.reconnect()
         self.cur.execute("SELECT COUNT(1) FROM code WHERE code = ?", (code, ))
         return 1 in self.cur.fetchall()[0]
 
     def is_player_whitelisted(self, code):
+        self.conn.reconnect()
         self.cur.execute("SELECT whitelisted FROM player WHERE uuid IN (SELECT player_uuid FROM code WHERE code = ?)", (code, ))
         return 1 in self.cur.fetchall()[0]
 
     def whitelist_player(self, code):
+        self.conn.reconnect()
         self.cur.execute("UPDATE player SET whitelisted = 1 WHERE uuid IN (SELECT player_uuid FROM code WHERE code = ?)", (code, ))
-        self.bot.conn.commit()
 
 
 class Minecraft(commands.Cog):
