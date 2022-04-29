@@ -59,5 +59,5 @@ if __name__ == '__main__':
 
     TOKEN = os.environ.get('TOKEN')
     logger.info("Starting rocky")
-    bot = Rocky(command_prefix='>')
+    bot = Rocky(command_prefix=':>')
     bot.run(TOKEN)

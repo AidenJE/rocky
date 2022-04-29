@@ -46,7 +46,6 @@ class Minecraft(commands.Cog):
         self.manager = MinecraftManager()
 
     @commands.command(help="Register your lunchclub token here.")
-    @commands.cooldown(2, 3.0, commands.BucketType.user)
     async def register(self, ctx, code: str):
         code = code.upper()
 
